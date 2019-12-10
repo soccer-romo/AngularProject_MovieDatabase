@@ -1,0 +1,33 @@
+<h3>{{pageTitle}}</h3>
+<div>
+    <div style="text-align: left;">
+        <h2 style="display:inline-block;">Now Playing Moive</h2>
+        <h2 style="display:inline-block;padding-left: 49%;">Most Pop Tv Show</h2>
+    </div>
+    <div >
+        <div *ngFor="let movie of movies.results">
+                <div *ngIf='movie.id === movies.results[0].id' class="card" style = "border: solid 2px black; width: 48%; height: 100%; text-align: center; float: left;">
+                    <img class="card-img-top" style="width: 100%;" [src] ="'https://image.tmdb.org/t/p/original' + movie.backdrop_path" [alt] ="movie.title">
+                    <div class="card-body">
+                        <h2 class="card-title" style="font-size: 20px;">{{movie.title}}</h2>
+                        <p class="card-text" >{{movie.overview}}</p>
+                        <p class="card-text">Rating: {{movie.vote_average * 10}}% <br> Date Aired: {{movie.release_date}}</p>
+                        <hr>
+                        <a class="card-text" id="moreInfo">More Info</a>
+                    </div>
+                </div>
+            </div>
+        <div *ngFor="let tvShow of tvShows.results">
+            <div *ngIf="tvShow.id === tvShows.results[0].id" class="card" style = "border: solid 2px black; width: 48%; height: 100%; text-align: center; overflow: hidden;">
+                <img class="card-img-top" style="width: 100%" [src]="'https://image.tmdb.org/t/p/original' + tvShow.backdrop_path" [alt]="tvShow.name">
+                <div class="card-body">
+                    <h2 class="card-title" style="font-size: 20px;">{{tvShow.name}}</h2>
+                    <p class="card-text">{{tvShow.overview}}</p>
+                    <p class="card-text">Rating: {{tvShow.vote_average * 10}}% <br> Date Aired: {{tvShow.first_air_date}}</p>
+                    <hr>
+                    <a class="card-text" id="moreInfo">More Info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

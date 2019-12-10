@@ -1,0 +1,16 @@
+<h3>{{pageTitle}}</h3>
+
+
+<div *ngFor='let movie of movies.results' >
+    <div class="card" [style.width.%]= "cardWidth" style = "border: solid 2px black; height: 800px; text-align: center; margin: 1%; float:left; overflow: hidden;">
+        <img class="card-img-top" style="width: 100%;" [src] ="'https://image.tmdb.org/t/p/original' + movie.backdrop_path" [alt] ="movie.title">
+        <div class="card-body">
+            <h2 class="card-title" style="font-size: 20px;">{{movie.title}}</h2>
+            <p class="card-text" [style.height.%] ="infoHeight" style="overflow-y: hidden;">{{movie.overview}}</p>
+            <p>...</p>
+            <p class="card-text">Rating: {{movie.vote_average * 10}}% <br> Date Aired: {{movie.release_date}}</p>
+            <hr>
+            <a class="card-text" id="moreInfo" (click) = "toggleMoreInfo()">More Info</a>
+        </div>
+    </div>
+</div>

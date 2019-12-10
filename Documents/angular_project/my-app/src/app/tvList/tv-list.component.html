@@ -1,0 +1,14 @@
+<h3>{{pageTitle}}</h3>
+
+<div *ngFor='let tvShow of tvShows.results'>
+    <div class="card" style = "border: solid 2px black; width: 48%; height: 800px; text-align: center; margin: 1%; float:left; overflow: hidden;">
+        <img class="card-img-top" style="width: 100%" [src]="'https://image.tmdb.org/t/p/original' + tvShow.backdrop_path" [alt]="tvShow.name">
+        <div class="card-body">
+            <h2 class="card-title" style="font-size: 20px;">{{tvShow.name}}</h2>
+            <p class="card-text">{{tvShow.overview}}</p>
+            <p class="card-text">Rating: {{tvShow.vote_average * 10}}% <br> Date Aired: {{tvShow.first_air_date}}</p>
+            <hr>
+            <a class="card-text" id="moreInfo">More Info</a>
+        </div>
+    </div>
+</div>

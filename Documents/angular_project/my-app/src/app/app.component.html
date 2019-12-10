@@ -1,0 +1,15 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!!
+  </h1>
+  <nav class="navbar navbar-light">
+    <a class= "navbar-brand"></a>
+    <ul class="nav nav-pills" >
+      <li><a class= "navbar-brand" [routerLink]= "['/home']" class="nav-link">Home</a></li>
+      <li><a class= "navbar-brand" [routerLink]= "['/movies']" class="nav-link">Movies</a></li>
+      <li><a class= "navbar-brand" [routerLink]="['/tvShows']" class="nav-link">TvShows</a></li>
+    </ul>
+    <h3>{{ pageTitle }}</h3>
+  </nav>
+  <router-outlet></router-outlet>
+</div>
